@@ -18,8 +18,6 @@ const buttonSubmit=document.getElementById("btn");
 const input2=document.getElementById('link');
 const input3=document.getElementById('comment');
 
-const userRightName=input1.value;
-let checkedName=userName(userRightName);
 
 function imageLink (src) {
   let image=document.createElement('img');
@@ -46,8 +44,7 @@ checkSpam(input3.value);
 
 function commentField () {
 const finalName=document.querySelector('chat');
-finalName.textContent=checkedName;
-console.log (finalName);
+finalName.textContent=
 
 }
 //console.log(commentField);
