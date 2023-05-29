@@ -11,6 +11,7 @@ result1 = result1[0].toUpperCase()+result1.slice(1).toLowerCase();
   //console.log(result1);
 return result1;
 }
+let checkedName=userName();
 
 //userName('YuTYYmRR');
 const input1=document.getElementById("name");
@@ -22,7 +23,7 @@ const input3=document.getElementById('comment');
 function imageLink (src) {
   let image=document.createElement('img');
   image.src=src;
-  input2.append(image);
+  document.getElementById("chat").append(image);
 }
 
 function checkSpam(str2) {
@@ -32,8 +33,19 @@ function checkSpam(str2) {
 //console.log(checkSpam('buy VIAgra now'));
 //console.log(checkSpam('free xxx'));
 //console.log(checkSpam('innocent rabbit'));
+let checkedComment = checkSpam();
 
-buttonSubmit.addEventListener('click', ()=> {
+buttonSubmit.addEventListener("click", commentField);
+
+function commentField() {
+  const chatName = document.getElementById("chat");
+  chatName.textContent = checkedName;
+  const chatComment = document.getElementById("chat");
+  chatComment = checkedComment;
+  imageLink();
+}
+
+/*buttonSubmit.addEventListener('click', ()=> {
 event.preventDefault();
 userName(input1.value);
 imageLink(input2.value);
@@ -47,4 +59,4 @@ const finalName=document.querySelector('chat');
 finalName.textContent=
 
 }
-//console.log(commentField);
+//console.log(commentField);*/
