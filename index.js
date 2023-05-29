@@ -11,7 +11,7 @@ result1 = result1[0].toUpperCase()+result1.slice(1).toLowerCase();
   //console.log(result1);
 return result1;
 }
-let checkedName=userName();
+//let checkedName=userName(input1.value);
 
 //userName('YuTYYmRR');
 const input1=document.getElementById("name");
@@ -33,31 +33,25 @@ function checkSpam(str2) {
 //console.log(checkSpam('buy VIAgra now'));
 //console.log(checkSpam('free xxx'));
 //console.log(checkSpam('innocent rabbit'));
-let checkedComment = checkSpam();
+//let checkedComment = checkSpam(input3.value);
 
 buttonSubmit.addEventListener("click", commentField);
 
 function commentField(evt) {
   evt.preventDefault();
   const chatName = document.getElementById("chat");
+  let checkedName=userName(input1.value);
   chatName.textContent = checkedName;
   const chatComment = document.getElementById("chat");
+  let checkedComment = checkSpam(input3.value);
   chatComment.textContent = checkedComment;
   imageLink();
 }
 
-/*buttonSubmit.addEventListener('click', ()=> {
+/*buttonSubmit.addEventListener('click', (evt)=> {
 event.preventDefault();
 userName(input1.value);
 imageLink(input2.value);
 checkSpam(input3.value);
 
-});
-
-
-function commentField () {
-const finalName=document.querySelector('chat');
-finalName.textContent=
-
-}
-//console.log(commentField);*/
+});*/
