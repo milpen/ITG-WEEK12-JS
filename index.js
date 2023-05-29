@@ -37,11 +37,12 @@ let checkedComment = checkSpam();
 
 buttonSubmit.addEventListener("click", commentField);
 
-function commentField() {
+function commentField(evt) {
+  evt.preventDefault();
   const chatName = document.getElementById("chat");
   chatName.textContent = checkedName;
   const chatComment = document.getElementById("chat");
-  chatComment = checkedComment;
+  chatComment.textContent = checkedComment;
   imageLink();
 }
 
