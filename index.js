@@ -2,7 +2,7 @@
 
 function userName (str1) {
 let result1=str1.trim();
-  console.log(result1);
+  //console.log(result1);
 
  if(result1 ==='') {
     return"Имя не введено";
@@ -11,19 +11,18 @@ result1 = result1[0].toUpperCase()+result1.slice(1).toLowerCase();
   //console.log(result1);
 return result1;
 }
-//let checkedName=userName(input1.value);
-
 //userName('YuTYYmRR');
 const input1=document.getElementById("name");
 const buttonSubmit=document.getElementById("btn");
 const input2=document.getElementById('link');
 const input3=document.getElementById('comment');
 
-
 function imageLink (src) {
+  let parentImageLink =document.querySelector("#chat");
   let image=document.createElement('img');
   image.src=src;
-  document.getElementById("chat").append(image);
+  image.alt="UserAvatar";
+  parentImageLink.appendChild(image);
 }
 
 function checkSpam(str2) {
@@ -35,7 +34,15 @@ function checkSpam(str2) {
 //console.log(checkSpam('innocent rabbit'));
 //let checkedComment = checkSpam(input3.value);
 
-buttonSubmit.addEventListener("click", commentField);
+buttonSubmit.addEventListener("click", commentField, outputUserName);
+
+function outputUserName (userName) {
+  let parentUserName=document.querySelector("#chat");
+  let outputName=document.createElement('p');
+  outputName.textContent=userName(input1.value);
+  //console.log(outputName);
+  parentUserName.appendChild(outputName);
+}
 
 function commentField(evt) {
   evt.preventDefault();
@@ -45,6 +52,7 @@ function commentField(evt) {
   const chatComment = document.getElementById("chat");
   let checkedComment = checkSpam(input3.value);
   chatComment.textContent = checkedComment;
+  outputUserName(userName);
   imageLink();
 }
 
